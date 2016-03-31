@@ -181,7 +181,7 @@ body{font-family:"Arial"}
 			</table>
 		</div>
 		<div class="policySearch ui-corner-all" style="margin-left: 300px;">
-			<h4>Loss Information</h4>
+			<h4>Loss Information </h4>
 			<table>
 				<tr>
 					<td></td>

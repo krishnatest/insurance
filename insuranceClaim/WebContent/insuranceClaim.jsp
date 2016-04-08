@@ -33,7 +33,7 @@ body{font-family:"Arial"}
 	<form name="IClaim" action="" method="POST" id="IClaim">
 		<!-- Krishna Comment added -->
 		<div style="text-align: center; font-size: x-large; font-weight: 700;">
-			Farmer Insurance
+			Farmer Insurance Dummy Data
 		</div>
 		<div class="policySearch ui-corner-all" style="margin-left: 300px;">
 			<h4>Personal Information</h4>

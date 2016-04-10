@@ -11,6 +11,7 @@
 	<property name="web-directory" value="" />
 	<property name="web-xml-file" value="WEB-INF/web.xml" />
 
+	
 	<tstamp prefix="build-info">
 		<format property="current-date" pattern="d-MMMM-yyyy" locale="en" />
 		<format property="current-time" pattern="hh:mm:ss a z" locale="en" />

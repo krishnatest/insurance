@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project name="insuranceClaim" default="ProTest" basedir=".">
 
 	<property name="project-name" value="${ant.project.name}" />

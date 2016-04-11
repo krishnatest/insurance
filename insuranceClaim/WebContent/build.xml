@@ -21,7 +21,9 @@
 			<include name="*.jar" />
 		</fileset>
 	</path>
-
+	<presetdef name="javac">
+	   <javac includeantruntime="false" />
+	</presetdef>
 
 	<target name="main">
 		<mkdir dir="${classes-directory}" />

@@ -1,75 +1,124 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. -->
-	<project basedir="." default="build" name="insuranceClaim">
-    <property environment="env"/>
-    <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.7"/>
-    <property name="source" value="1.7"/>
-              	
-            	<property name="project-name" value="${ant.project.name}" />
-            	<property name="builder" value="TeamCakes" />
-            	<property name="war-file-name" value="${project-name}.war" />
-            	<property name="source-directory" value="src" />
-            	<property name="classes-directory" value="WEB-INF/classes" />
-            	<property name="web-directory" value="" />
-            	<property name="web-xml-file" value="WEB-INF/web.xml" />
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="insuranceClaim" default="ProTest" basedir=".">
 
-            	<tstamp prefix="build-info">
-            		<format property="current-date" pattern="d-MMMM-yyyy" locale="en" />
-            		<format property="current-time" pattern="hh:mm:ss a z" locale="en" />
-            	</tstamp>
-            	<property name="build-directory" value="build" />
-              	
-    <path id="Web App Libraries.libraryclasspath"/>
-    <path id="EAR Libraries.libraryclasspath"/>
-    <path id="insuranceClaim.classpath">
-        <pathelement location="build/classes"/>
-        <path refid="Web App Libraries.libraryclasspath"/>
-        <path refid="EAR Libraries.libraryclasspath"/>
-        <pathelement location="WebContent/lib/javax.servlet-3.0.0.v201112011016.jar"/>
-    </path>
-    <target name="init">
-        <mkdir dir="build/classes"/>
-        <copy includeemptydirs="false" todir="build/classes">
-            <fileset dir="src">
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="clean">
-        <delete dir="build/classes"/>
-    </target>
-    <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
-            <classpath refid="insuranceClaim.classpath"/>
-        </javac>
-    </target>
-              	
-        	<target name="war">
-        			<mkdir dir="${build-directory}" />
-        			<delete file="${build-directory}/${war-file-name}" />
-        			<war warfile="${build-directory}/${war-file-name}" webxml="${web-xml-file}">
-        				<classes dir="${classes-directory}" />
-        				<fileset dir="${web-directory}">
-        					<!-- Need to exclude it since webxml is an attribute of the war tag above -->
-        					<exclude name="WEB-INF/web.xml" />
-        				</fileset>
-        				<manifest>
-        					<attribute name="Built-By" value="${builder}" />
-        					<attribute name="Built-On" value="${build-info.current-date}" />
-        					<attribute name="Built-At" value="${build-info.current-time}" />
-        				</manifest>
-        			</war>
-        		</target>              	
-              	
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+	<property name="project-name" value="${ant.project.name}" />
+	<property name="builder" value="TeamCakes" />
+
+	<property name="war-file-name" value="${project-name}.war" />
+	<property name="source-directory" value="src" />
+	<property name="classes-directory" value="WEB-INF/classes" />
+	<property name="web-directory" value="" />
+	<property name="web-xml-file" value="WEB-INF/web.xml" />
+
+	<tstamp prefix="build-info">
+		<format property="current-date" pattern="d-MMMM-yyyy" locale="en" />
+		<format property="current-time" pattern="hh:mm:ss a z" locale="en" />
+	</tstamp>
+	<property name="build-directory" value="build" />
+	<property name="findbug.home" value="insuranceClaim/WebContent" />
+	<path id="build.classpath">
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+
+	<target name="main">
+		<mkdir dir="${classes-directory}" />
+		<!-- <echo message="inside" /> -->
+		<javac srcdir="../src" destdir="${classes-directory}"
+			classpath="lib/javax.servlet-3.0.0.v201112011016.jar">
+		</javac>
+	</target>
+
+	<!-- Testing Start -->
+	
+	<path id="Testcase-Classpath">
+		<pathelement location="../TestCase" />
+		<pathelement location="lib/selenium-server-standalone-2.42.2.jar" />
+		<pathelement location="lib/junit-4.10.jar" />
+	</path>
+	<target name="DevTestBuild">
+		<javac srcdir="../TestCase" destdir="../TestCase">
+		    <exclude name="QATest.java"/>
+		    <exclude name="ProTest.java"/>
+			<classpath refid="Testcase-Classpath" />
+		</javac>
+	</target>
+
+	<target name="DevTest" depends="DevTestBuild">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml" />
+			<test name="DevTest" todir="../TestCase" />
+			<classpath refid="Testcase-Classpath" />
+		</junit>
+	</target>
+	
+	<target name="QATestBuild">
+		<javac srcdir="../TestCase" destdir="../TestCase">
+		    <exclude name="DevTest.java"/>
+		    <exclude name="ProTest.java"/>
+			<classpath refid="Testcase-Classpath" />
+		</javac>
+	</target>
+
+	<target name="QATest" depends="QATestBuild">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml" />
+			<test name="QATest" todir="../TestCase" />
+			<classpath refid="Testcase-Classpath" />
+		</junit>
+	</target>
+	
+	
+	<target name="ProTestBuild">
+		<javac srcdir="../TestCase" destdir="../TestCase">
+		    <exclude name="QATest.java"/>
+		    <exclude name="DevTest.java"/>
+			<classpath refid="Testcase-Classpath" />
+		</javac>
+	</target>
+
+	<target name="ProTest" depends="ProTestBuild">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml" />
+			<test name="ProTest" todir="../TestCase" />
+			<classpath refid="Testcase-Classpath" />
+		</junit>
+	</target>
+	
+
+	<!-- Testing End All-->
+
+
+	<target name="findbugs" depends="main">
+		<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"
+			classpath="lib/findbugs.jar" />
+		<findbugs home="" jvmargs="-ea -Xmx900m" output="xml:withMessages"
+			timestampNow="true" reportLevel="low" chooseVisitors="+CheckExpectedWarnings"
+			outputFile="../build/baseline.xml">
+			<sourcePath path="../src" />
+			<auxclasspath path="lib/" />
+			<class location="WEB-INF/classes" />
+		</findbugs>
+	</target>
+
+
+	<target name="war" depends="main">
+		<mkdir dir="${build-directory}" />
+		<delete file="${build-directory}/${war-file-name}" />
+		<war warfile="${build-directory}/${war-file-name}" webxml="${web-xml-file}">
+			<classes dir="${classes-directory}" />
+			<fileset dir="${web-directory}">
+				<!-- Need to exclude it since webxml is an attribute of the war tag above -->
+				<exclude name="WEB-INF/web.xml" />
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="${builder}" />
+				<attribute name="Built-On" value="${build-info.current-date}" />
+				<attribute name="Built-At" value="${build-info.current-time}" />
+			</manifest>
+		</war>
+	</target>
+
 </project>

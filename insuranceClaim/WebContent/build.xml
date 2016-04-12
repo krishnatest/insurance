@@ -110,7 +110,7 @@
 	<target name="war" depends="main">
 		<mkdir dir="${build-directory}" />
 		<delete file="${build-directory}/${war-file-name}" />
-		<war warfile="${build-directory}/${war-file-name}" webxml="${web-xml-file}">
+		<war warfile="${war-file-name}" webxml="${web-xml-file}">
 			<classes dir="${classes-directory}" />
 			<fileset dir="${web-directory}">
 				<!-- Need to exclude it since webxml is an attribute of the war tag above -->

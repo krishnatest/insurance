@@ -20,7 +20,7 @@ body{font-family:"Arial"}
 </head>
 <body>
 	<link rel='stylesheet' href='css/Insurance claim.css' type='text/css' />
-	<!-- <img src="images/farmersheader.png"> -->
+	<!-- <img src="images/farmersheader.png"> -->  
 	<br />
 	<font color="red"><center>
 			<!----<b>"Please fill all the fields. Items marked with an asterisk(*) are required fields"</b>-->

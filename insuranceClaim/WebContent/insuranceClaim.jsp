@@ -34,7 +34,7 @@ body{font-family:"Arial"}
 	<form name="IClaim" action="" method="POST" id="IClaim">
 		<!-- Krishna Comment added -->
 		<div style="text-align: center; font-size: x-large; font-weight: 700;">
-			Health Care...
+			Health Care.
 		</div>
 		<div class="policySearch ui-corner-all" style="margin-left: 300px;">
 			<h4>User Registration</h4>

@@ -30,7 +30,7 @@
 		
 	<!-- test -->		
 		
-	<target name="war" depends="">
+	<target name="war" depends="main">
 		<mkdir dir="${build-directory}" />
 		<delete file="${build-directory}/${war-file-name}" />
 		<war warfile="${build-directory}/${war-file-name}" webxml="${web-xml-file}">

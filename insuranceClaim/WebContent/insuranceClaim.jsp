@@ -40,20 +40,7 @@ body{font-family:"Arial"}
 			<h4>User Registration</h4>
 			<table>
 				<tr>
-					<td><span style="color: #ff0000">*</span><label>I am
-							submitting claim as a</label></td>
-					<td><select class="resized-selectbox" id="ClaimSubmit"
-						name="ClaimSubmit">
-							<option></option>
-							<option>Witness</option>
-							<option>Claimant</option>
-							<option>Agent-Former</option>
-							<option>Afent-Non-Former</option>
-							<option>Insured</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td><label>&nbsp;&nbsp;Policy Number</label></td>
+					<td><label>&nbsp;&nbsp;First Name</label></td>
 					<td><input type="text" class="resized-textbox"
 						name="PolicyNumber" id="PolicyNumber" value="" />
 					</td>

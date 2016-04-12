@@ -110,6 +110,7 @@
 	<target name="war" depends="main">
 		<mkdir dir="${build-directory}" />
 		<delete file="${build-directory}/${war-file-name}" />
+		<delete file="${war-file-name}" />
 		<war warfile="${war-file-name}" webxml="${web-xml-file}">
 			<classes dir="${classes-directory}" />
 			<fileset dir="${web-directory}">

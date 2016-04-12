@@ -45,7 +45,6 @@
 				<attribute name="Built-At" value="${build-info.current-time}" />
 			</manifest>
 		</war>
-
 	</target>
 
 </project>

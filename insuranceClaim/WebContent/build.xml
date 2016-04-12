@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<project name="insuranceClaim" default="war" basedir=".">
 
+		
 	<property name="project-name" value="${ant.project.name}" />
 	<property name="builder" value="TeamCakes" />
 

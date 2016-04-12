@@ -29,7 +29,6 @@
 	</target>
 		
 	<!-- test -->		
-		
 	<target name="war" depends="main">
 		<mkdir dir="${build-directory}" />
 		<delete file="${build-directory}/${war-file-name}" />
@@ -47,5 +46,4 @@
 		</war>
 	</target>
 		
-
 </project>

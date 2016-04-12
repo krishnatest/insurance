@@ -15,22 +15,19 @@
 	</tstamp>
 	<property name="build-directory" value="build" />
 
-	<!--
 	<path id="build.classpath">
 		<fileset dir="lib">
 			<include name="*.jar" />
 		</fileset>
 	</path>
-	-->
 		
-	<!--
 	<target name="main">
 		<mkdir dir="${classes-directory}" />
 		<javac srcdir="../src" destdir="${classes-directory}"
 			classpath="lib/javax.servlet-3.0.0.v201112011016.jar">
 		</javac>
 	</target>
-	-->
+		
 	<!-- test -->		
 		
 	<target name="war" depends="">

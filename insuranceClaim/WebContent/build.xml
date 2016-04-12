@@ -15,25 +15,25 @@
 	</tstamp>
 	<property name="build-directory" value="build" />
 
+	<!--
 	<path id="build.classpath">
 		<fileset dir="lib">
 			<include name="*.jar" />
 		</fileset>
 	</path>
+	-->
 		
+	<!--
 	<target name="main">
 		<mkdir dir="${classes-directory}" />
-		<!-- <echo message="inside" /> -->
 		<javac srcdir="../src" destdir="${classes-directory}"
 			classpath="lib/javax.servlet-3.0.0.v201112011016.jar">
 		</javac>
 	</target>
+	-->
 	<!-- test -->		
 		
-	<target name="war" depends="main">
-		<delete>
-		    <dirset dir="${build-directory}" />
-		</delete>		
+	<target name="war" depends="">
 		<mkdir dir="${build-directory}" />
 		<delete file="${build-directory}/${war-file-name}" />
 		<war warfile="${build-directory}/${war-file-name}" webxml="${web-xml-file}">

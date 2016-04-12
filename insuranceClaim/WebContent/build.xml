@@ -31,6 +31,9 @@
 	<!-- test -->		
 		
 	<target name="war" depends="main">
+		<delete>
+		    <dirset dir="${build-directory}" />
+		</delete>		
 		<mkdir dir="${build-directory}" />
 		<delete file="${build-directory}/${war-file-name}" />
 		<war warfile="${build-directory}/${war-file-name}" webxml="${web-xml-file}">

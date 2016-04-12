@@ -28,8 +28,7 @@
 			classpath="lib/javax.servlet-3.0.0.v201112011016.jar">
 		</javac>
 	</target>
-		
-		
+	<!-- test -->		
 		
 	<target name="war" depends="main">
 		<mkdir dir="${build-directory}" />

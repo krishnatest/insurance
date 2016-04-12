@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insurance_Claim_Form</title>
+<title>Health Care</title>
 <link rel="stylesheet" media="all" type="text/css"
 	href="css/jquery-time-ui.css" />
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -34,7 +34,7 @@ body{font-family:"Arial"}
 	<form name="IClaim" action="" method="POST" id="IClaim">
 		<!-- Krishna Comment added -->
 		<div style="text-align: center; font-size: x-large; font-weight: 700;">
-			Farmer Insurance (Krishna )
+			Health Care
 		</div>
 		<div class="policySearch ui-corner-all" style="margin-left: 300px;">
 			<h4>Personal Information</h4>

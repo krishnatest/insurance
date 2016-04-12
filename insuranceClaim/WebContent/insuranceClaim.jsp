@@ -48,7 +48,7 @@ body{font-family:"Arial"}
 		</div>
 		
 		<div class="policySearch ui-corner-all" style="margin-left: 300px;">
-			<h4>Contact Information</h4>
+			<h4>Contact Information </h4>
 			<table>
 				<tr>
 					<td></td>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="insuranceClaim" default="ProTest" basedir=".">
+<project name="insuranceClaim" basedir=".">
 
 	<property name="project-name" value="${ant.project.name}" />
 	<property name="builder" value="TeamCakes" />
@@ -31,7 +31,7 @@
 	</target>
 
 	<!-- Testing Start -->
-	
+	<!--
 	<path id="Testcase-Classpath">
 		<pathelement location="../TestCase" />
 		<pathelement location="lib/selenium-server-standalone-2.42.2.jar" />
@@ -85,11 +85,14 @@
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>
-	
+	-->
 
 	<!-- Testing End All-->
 
 
+	
+	
+<!--
 	<target name="findbugs" depends="main">
 		<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"
 			classpath="lib/findbugs.jar" />
@@ -101,8 +104,9 @@
 			<class location="WEB-INF/classes" />
 		</findbugs>
 	</target>
+-->
 
-
+	
 	<target name="war" depends="main">
 		<mkdir dir="${build-directory}" />
 		<delete file="${build-directory}/${war-file-name}" />

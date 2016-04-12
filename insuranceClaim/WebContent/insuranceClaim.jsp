@@ -22,6 +22,7 @@ body{font-family:"Arial"}
 	<link rel='stylesheet' href='css/Insurance claim.css' type='text/css' />
 	<!-- <img src="images/farmersheader.png"> -->  
 	<br />
+	
 	<font color="red"><center>
 			<!----<b>"Please fill all the fields. Items marked with an asterisk(*) are required fields"</b>-->
 		</center></font>
@@ -33,7 +34,7 @@ body{font-family:"Arial"}
 	<form name="IClaim" action="" method="POST" id="IClaim">
 		<!-- Krishna Comment added -->
 		<div style="text-align: center; font-size: x-large; font-weight: 700;">
-			Farmer Insurance (Krishna Kumar)
+			Farmer Insurance (Krishna )
 		</div>
 		<div class="policySearch ui-corner-all" style="margin-left: 300px;">
 			<h4>Personal Information</h4>

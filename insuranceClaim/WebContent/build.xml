@@ -34,12 +34,12 @@
 	<!-- Testing Start -->
 	
 	<path id="Testcase-Classpath">
-		<pathelement location="../TestCase" />
+		<pathelement location="../TestCases" />
 		<pathelement location="lib/selenium-server-standalone-2.42.2.jar" />
 		<pathelement location="lib/junit-4.10.jar" />
 	</path>
 	<target name="DevTestBuild">
-		<javac srcdir="../TestCase" destdir="../TestCase">
+		<javac srcdir="../TestCases" destdir="../TestCases">
 		    <exclude name="QATest.java"/>
 		    <exclude name="ProTest.java"/>
 			<classpath refid="Testcase-Classpath" />
@@ -49,13 +49,13 @@
 	<target name="DevTest" depends="DevTestBuild">
 		<junit fork="yes" printsummary="withOutAndErr">
 			<formatter type="xml" />
-			<test name="DevTest" todir="../TestCase" />
+			<test name="DevTest" todir="../TestCases" />
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>
 	
 	<target name="QATestBuild">
-		<javac srcdir="../TestCase" destdir="../TestCase">
+		<javac srcdir="../TestCases" destdir="../TestCases">
 		    <exclude name="DevTest.java"/>
 		    <exclude name="ProTest.java"/>
 			<classpath refid="Testcase-Classpath" />
@@ -65,14 +65,14 @@
 	<target name="QATest" depends="QATestBuild">
 		<junit fork="yes" printsummary="withOutAndErr">
 			<formatter type="xml" />
-			<test name="QATest" todir="../TestCase" />
+			<test name="QATest" todir="../TestCases" />
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>
 	
 	
 	<target name="ProTestBuild">
-		<javac srcdir="../TestCase" destdir="../TestCase">
+		<javac srcdir="../TestCases" destdir="../TestCases">
 		    <exclude name="QATest.java"/>
 		    <exclude name="DevTest.java"/>
 			<classpath refid="Testcase-Classpath" />
@@ -82,7 +82,7 @@
 	<target name="ProTest" depends="ProTestBuild">
 		<junit fork="yes" printsummary="withOutAndErr">
 			<formatter type="xml" />
-			<test name="ProTest" todir="../TestCase" />
+			<test name="ProTest" todir="../TestCases" />
 			<classpath refid="Testcase-Classpath" />
 		</junit>
 	</target>

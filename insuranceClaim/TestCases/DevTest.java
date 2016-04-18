@@ -39,6 +39,7 @@ public class DevTest extends TestCase {
 
 				driver.get(baseUrl);
 				System.out.println(baseUrl);
+				/*
 				new Select(driver.findElement(By.id("ClaimSubmit")))
 						.selectByVisibleText("Witness");
 				
@@ -94,10 +95,12 @@ public class DevTest extends TestCase {
 				driver.findElement(By.name("Lzipcode")).sendKeys("98001");
 				new Select(driver.findElement(By.id("LCountry")))
 						.selectByVisibleText("USA");
-
+				
+				*/
+				
 				driver.findElement(By.id("submit")).submit();
 				Thread.sleep(5000);
-
+				
 				/*String error = driver.findElement(By.id("error")).getAttribute(
 						"value");
 				if (error.isEmpty()) {

@@ -15,7 +15,7 @@ public class QATest extends TestCase {
 
 	public void setUp() throws Exception {
 		driver = new HtmlUnitDriver();
-		baseUrl = "http://cads-insurance-qa.elasticbeanstalk.com/Insurance_Claim.jsp";
+		baseUrl = "http://cadsdevops-env.ap-southeast-1.elasticbeanstalk.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}

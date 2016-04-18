@@ -170,7 +170,7 @@ body{font-family:"Arial"}
 				</tr>
 			</table>
 		</div>
-		<!--  Submit Button HERE 123 -->
+		<!--  Submit Button -->
 		<center>
 			<input type="submit" title="submit" value="submit" id="submit">
 		</center>

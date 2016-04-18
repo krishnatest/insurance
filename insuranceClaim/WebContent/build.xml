@@ -103,7 +103,6 @@
 		</findbugs>
 	</target>
 
-
 	<target name="war" depends="main">
 		<mkdir dir="${build-directory}" />
 		<delete file="${build-directory}/${war-file-name}" />

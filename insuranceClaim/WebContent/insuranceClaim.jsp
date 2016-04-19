@@ -1,181 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Health Care</title>
-<link rel="stylesheet" media="all" type="text/css"
-	href="css/jquery-time-ui.css" />
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jquery-time-ui.min.js"></script>
-<link rel="stylesheet" media="all" type="text/css"
-	href="css/jquery-ui-timepicker-addon.css" />
-<script>
-	$(function() {
-		$("#datepicker").datepicker();
-	});
-</script>
-<style>
-
-body{font-family:"Arial"}
-
-</style>
+<meta charset="utf-8" />
+<title>::: Patient Portal - Home :::</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/style_ie.css" type="text/css" media="screen, projection" />
+<!-- <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> -->
 </head>
 <body>
-	<link rel='stylesheet' href='css/Insurance claim.css' type='text/css' />
-	<!-- <img src="images/farmersheader.png"> -->  
-	<br />
-	
-	<font color="red"><center>
-			<!----<b>"Please fill all the fields. Items marked with an asterisk(*) are required fields"</b>-->
-		</center></font>
+	<div id="wrapper" class="LoginBackground">
+		<div id="headerlogin">
+			<div id="loginHearBg"></div>
+		</div>
+		<div id="logincontent">
+			<div id="mydiv">
+				<div class="row">
+					<div id="loginlogo">
+						<img src="images/logo.png">
+					</div>
+					<div id="logininput">
+						<form action="UserAuthentication" method="post" name="iCare" id="iCare">
+							<div id="logininputcontent">
+								<div style="color: #c80000" value="">${errorMessage }</div>
+								<span class="signin"> Sign In </span><br> 
+								<span class="username"> Username </span><br> 
+									<input type="text" class="textbox" name="userName" id="userName" ><br> 
+								<span class="username"> Password </span><br> 
+									<input type="password" class="textbox" name="password" id="password" ><br>
+								<span>
+									<!-- <a href="home.jsp" class="Signbtn">Sign In</a> -->
+									<input type="submit" name="submit" value="Sign In" class="Signbtn" />
+								</span><br> 
+								<span> <a href="#" class="mainlink">Unable to access my account</a></span><br> 
+								<span> <a href="#" class="mainlink">Click here to Register </a></span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- #content-->
 	</div>
-	<div class="etab" style="color: #c80000" value=""></div>
-	<input type="text" style="display: none;" name="error" id="error"
-		value="" />
-
-	<form name="IClaim" action="" method="POST" id="IClaim">
-		<!-- Krishna Comment added -->
-		<div style="text-align: center; font-size: x-large; font-weight: 700;">
-			CADS Health Care
-			
+	<div id="loginfooterbg">
+		<div id="poweredby">
+			<p class="loginpoweredby">
+				Powered by :
+			</p>
 		</div>
-		<div class="policySearch ui-corner-all" style="margin-left: 300px;">
-			<h4>User Registration</h4>
-			<table>
-				<tr>
-					<td><label>&nbsp;&nbsp;First Name</label></td>
-					<td><input type="text" class="resized-textbox"
-						name="PolicyNumber" id="PolicyNumber" value="" />
-					</td>
-			</table>
-		</div>
-		
-		<div class="policySearch ui-corner-all" style="margin-left: 300px;">
-			<h4>Contact Information </h4>
-			<table>
-				<tr>
-					<td></td>
-				</tr>
-				<tr>
-					<td><span style="color: #ff0000">*</span><label>First
-							Name<span class="tab"></span>
-					</label></td>
-					<td><input type="text" class="resized-ctextbox" name="Fname"
-						id="Fname" value="" /></td>
-					<td><span style="color: #ff0000">*</span><label>Last
-							Name<span class="tab"></span>
-					</label></td>
-					<td><input type="text" class="resized-ctextbox" name="Lname"
-						id="Lname" value="" /></td>
-				</tr>
-				<tr>
-					<td><span style="color: #ff0000">*</span><label>Street/Apt.Number<span
-							class="tab"></span></label></td>
-					<td><input type="text" class="resized-ctextbox"
-						name="Aptnumber" id="Aptnumber" value="" /></td>
-					<td><span style="color: #ff0000">*</span><label>City<span
-							class="tab"></span></label></td>
-					<td><input type="text" class="resized-ctextbox" name="City"
-						id="City" /></td>
-				</tr>
-				<tr>
-					<td><span style="color: #ff0000">*</span><label>State</label></td>
-					<td><select class="resized-cselectbox" id="State" name="State">
-							<option></option>
-							<option>California</option>
-							<option>Indiana</option>
-							<option>New Mexico</option>
-							<option>New York</option>
-							<option>Washington</option>
-					</select></td>
-					<td><span style="color: #ff0000">*</span><label>Zipcode<span
-							class="tab"></span></label></td>
-					<td><input type="text" class="resized-ctextbox" name="Zipcode"
-						id="Zipcode" value="" /></td>
-				</tr>
-				<tr>
-					<td><label>&nbsp;&nbsp;EMail Address<span class="tab"></span></
-					</label></td>
-					<td><input type="text" class="resized-ctextbox" name="Email"
-						id="Email" value="" /></td>
-					<td><label>Confirm Email<br>Address
-					</label><span class="tab"></span></td>
-					<td><input type="text" class="resized-ctextbox" name="CEmail"
-						id="CEmail" value="" /></td>
-				<tr>
-					<td><label>Do you prefer email<br>Correspondence<span
-							class="tab"></span></label></td>
-					<td><input type="radio" name="emailp" id="Y" value="Yes" />Yes&nbsp;<input
-						type="radio" name="emailp" id="N" value="No" />No</td>
-					<td><label>Preferred Language</label></td>
-					<td><select class="resized-cselectbox"
-						name="PreferredLanguage" id="PreferredLanguage">
-							<option></option>
-							<option>English</option>
-							<option>Spanish</option>
-							<option>French</option>
-							<option>German</option>
-							<option>Japanese</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td><label>Interpreter Needed</label></td>
-					<td><input type="hidden" name="Ineed" value="No" /><input
-						type="checkbox" name="Ineed" value="Yes" /></td>
-				</tr>
-				<tr>
-					<td colspan="2" style="vertical-align: top">
-						<fieldset class="fld">
-							<legend>
-								<span style="color: #ff0000">*</span>Phone Contacts
-							</legend>
-							<table style="width: 100px;">
-								<tr>
-									<td></td>
-									<td></td>
-									<td><label>&nbsp;Best&nbsp;Phone</label></td>
-								</tr>
-								<tr>
-									<td><label><span class="pttab"></span>Home&nbsp;Phone</label></td>
-									<span class="pttab"></span>
-									<td><input type="text" class="resized-ptextbox"
-										name="Hphone" id="Hp" value="" /></td>
-									<td><span class="ptab"></span><input type="radio"
-										name="phc" id="H" value="HomePhone" /></td>
-								</tr>
-								<tr>
-									<td><label>Work&nbsp;Phone</label></td>
-									<td><input type="text" class="resized-ptextbox"
-										name="Wphone" id="Wp" value="" /></td>
-									<td><span class="ptab"></span><input type="radio"
-										name="phc" id="W" value="WorkPhone" /></td>
-								</tr>
-								<tr>
-									<td><label>Cell&nbsp;Phone</label></td>
-									<td><input type="text" class="resized-ptextbox"
-										name="Cphone" id="Cp" value="" /></td>
-									<td><span class="ptab"></span><input type="radio"
-										name="phc" id="C" value="CellPhone" /></td>
-								</tr>
-								<tr>
-									<td><label>Alternate&nbsp;Phone</label></td>
-									<td><input type="text" class="resized-ptextbox"
-										name="Alphone" id="Ap" value="" /></td>
-									<td><span class="ptab"></span><input type="radio"
-										name="phc" id="A" value="AlternatePhone" /></td>
-								</tr>
-							</table>
-						</fieldset>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<!--  Submit Button -->
-		<center>
-			<input type="submit" title="submit" value="submit" id="submit">
-		</center>
-	</form>
+	</div>
 </body>
 </html>

@@ -52,10 +52,12 @@ public class UserAuthentication extends HttpServlet {
 			result = false;
 		}
 		
+		
 		if (password.equals("")) {
 			error += "Please enter Password.<br/>";
 			result = false;
 		}
+		
 		
 		if (userName.equals(uName) && password.equals(uPwd)) {
 

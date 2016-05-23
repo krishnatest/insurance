@@ -25,19 +25,22 @@
 						<form action="UserAuthentication" method="post" name="iCare" id="iCare">
 							<div id="logininputcontent">
 								<div style="color: #c80000" value="">${errorMessage }</div>
-								<span class="signin"> Sign In </span><br> 
-								<span class="username"> Username </span><br> 
-									<input type="text" class="textbox" name="userName" id="userName" ><br> 
-								<span class="username"> Password </span><br> 
-									<input style="margin-bottom: 10px;" type="password" class="textbox" name="password" id="password" ><br>
+								<span class="signin"> Sign In </span><br /> 
+								<span class="username"> Username </span><br /> 
+									<input type="text" class="textbox" name="userName" id="userName" ><br /> 
+								<span class="username"> Password </span><br /> 
+									<input style="margin-bottom: 10px;" type="password" class="textbox" name="password" id="password" ><br />
 								
+								<!--
 								<span class="username"> Captcha 2 + 2 =</span> 
-									<input style="width: 85px;" type="text" class="textbox" name="captcha" id="captcha" ><br>
-									
+									<input style="width: 85px;" type="text" class="textbox" name="captcha" id="captcha" >
+									<br />
+								-->
+								
 								<span>
 									<input type="submit" name="submit" id="submit" value="Sign In" class="Signbtn" />
-								</span><br> 
-								<span> <a href="#" class="mainlink">Unable to access my account</a></span><br> 
+								</span><br /> 
+								<span> <a href="#" class="mainlink">Unable to access my account</a></span><br /> 
 								<span> <a href="#" class="mainlink">Click here to Register </a></span>
 							</div>
 						</form>

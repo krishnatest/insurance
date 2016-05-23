@@ -39,7 +39,7 @@ public class ProTest extends TestCase {
 			driver.findElement(By.id("captcha")).clear();
 			driver.findElement(By.id("captcha")).sendKeys("4");
 			
-			driver.findElement(By.id("captcha")).submit();
+			driver.findElement(By.id("submit")).submit();
 			Thread.sleep(5000);
 
 			 System.out.println("Selenium Test Passed");

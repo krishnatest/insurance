@@ -15,7 +15,6 @@ public class QATest extends TestCase {
 	private String baseUrl;
 	private BufferedReader in = null;
 	
-
 	public void setUp() throws Exception {
 		driver = new HtmlUnitDriver();
 		baseUrl = "http://devops-qaenv.ap-southeast-1.elasticbeanstalk.com/";

@@ -18,7 +18,7 @@ public class QATest extends TestCase {
 
 	public void setUp() throws Exception {
 		driver = new HtmlUnitDriver();
-		baseUrl = "http://devops-qa.ap-southeast-1.elasticbeanstalk.com/";
+		baseUrl = "http://devops-qaenv.ap-southeast-1.elasticbeanstalk.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}

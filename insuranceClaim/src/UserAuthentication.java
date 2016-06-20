@@ -1,4 +1,5 @@
-import java.io.IOException;
+import java.io.*;
+//import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 
@@ -9,6 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 //import org.apache.tomcat.util.buf.Base64;
 
@@ -22,7 +28,7 @@ public class UserAuthentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String uName = "test";
 	private String uPwd = "test";
-
+	public String name1;
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -91,9 +97,12 @@ public class UserAuthentication extends HttpServlet {
 			}
 		}
 		
+		name1 = this.readJsonDataScript();
 		
 		if (result) {
-			response.sendRedirect("home.jsp");
+			//response.sendRedirect("http://localhost:6060/insuranceClaim/home.jsp?data="+name1);
+		    response.sendRedirect(request.getContextPath() + "/home.jsp?" + name1);
+
 		} else {
 			request.setAttribute("errorMessage", error);
 			request.getRequestDispatcher("/insuranceClaim.jsp").forward(request, response);
@@ -101,4 +110,36 @@ public class UserAuthentication extends HttpServlet {
 	}	
 	
 
+	
+	/**
+	 * 
+	 */
+	public String readJsonDataScript() throws IOException {
+		// TODO Auto-generated method stub
+		// Json data read
+		
+		JSONParser parser = new JSONParser();
+		try {
+		    Object obj = parser.parse(new FileReader("D:\\ExternalJAR\\kimJson.txt"));
+		    JSONObject jsonObject = (JSONObject) obj;
+
+		    name1 = (String) jsonObject.get("name");
+		    //String author = (String) jsonObject.get("Author");
+		    //JSONArray companyList = (JSONArray) jsonObject.get("Company List");
+		    System.out.println("name: " + name1);
+		    
+		    //System.out.println("Author: " + author);
+		    //System.out.println("\nCompany List:");
+		    //Iterator<String> iterator = companyList.iterator();
+		    //while (iterator.hasNext()) {
+		        //System.out.println(iterator.next());
+		    //}
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
+		return name1;
+	}	
+	
+	
+	
 }

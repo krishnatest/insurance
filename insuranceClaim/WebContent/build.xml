@@ -19,7 +19,6 @@
 	<path id="build.classpath">
 		<fileset dir="lib">
 			<include name="*.jar" />
-			<include name="json-simple-1.1.1.jar" />
 		</fileset>
 	</path>
 
@@ -29,6 +28,9 @@
 		<!-- <echo message="inside" /> -->
 		<javac srcdir="../src" destdir="${classes-directory}"
 			classpath="lib/javax.servlet-3.0.0.v201112011016.jar">
+		</javac>
+		<javac srcdir="../src" destdir="${classes-directory}"
+			classpath="lib/json-simple-1.1.1.jar">
 		</javac>
 	</target>
 

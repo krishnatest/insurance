@@ -128,6 +128,8 @@ public class UserAuthentication extends HttpServlet {
 			*/
 			
 		    JSONArray a = (JSONArray) parser.parse(new FileReader("D:\\ExternalJAR\\kimJson.txt"));
+		    //	Linux path /var/tmp/kimJson.txt
+		    //	Windows path D:\\ExternalJAR\\kimJson.txt
 		    
 		    Boolean i = true;
 		    for (Object o : a)

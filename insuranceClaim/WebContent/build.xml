@@ -20,9 +20,14 @@
 		<fileset dir="lib">
 			<include name="*.jar" />
 		</fileset>
-		<pathelement location="WebContent/lib/json-simple-1.1.1.jar"/>
+		<!--<pathelement location="WebContent/lib/json-simple-1.1.1.jar"/>-->
 	</path>
 
+	<javac srcdir="../src" destdir="${classes-directory}">   
+	    <classpath>
+	        <pathelement path="WebContent/lib/json-simple-1.1.1.jar"/>
+	    </classpath>
+	</javac>
 
 	<target name="main">
 		<mkdir dir="${classes-directory}" />

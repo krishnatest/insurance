@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -101,7 +102,7 @@ public class UserAuthentication extends HttpServlet {
 		
 		if (result) {
 			//response.sendRedirect("http://localhost:6060/insuranceClaim/home.jsp?data="+name1);
-		    response.sendRedirect(request.getContextPath() + "/home.jsp?" + name1);
+		    response.sendRedirect(request.getContextPath() + "/home.jsp?data=" + name1);
 
 		} else {
 			request.setAttribute("errorMessage", error);
@@ -120,20 +121,38 @@ public class UserAuthentication extends HttpServlet {
 		
 		JSONParser parser = new JSONParser();
 		try {
+			/*
 		    Object obj = parser.parse(new FileReader("D:\\ExternalJAR\\kimJson.txt"));
-		    JSONObject jsonObject = (JSONObject) obj;
-
-		    name1 = (String) jsonObject.get("name");
-		    //String author = (String) jsonObject.get("Author");
-		    //JSONArray companyList = (JSONArray) jsonObject.get("Company List");
-		    System.out.println("name: " + name1);
+		    //JSONObject jsonObject = (JSONObject) obj;
+		    //JSONArray jsonarray = (JSONArray) obj;
+			*/
+			
+		    JSONArray a = (JSONArray) parser.parse(new FileReader("D:\\ExternalJAR\\kimJson.txt"));
 		    
-		    //System.out.println("Author: " + author);
-		    //System.out.println("\nCompany List:");
-		    //Iterator<String> iterator = companyList.iterator();
-		    //while (iterator.hasNext()) {
-		        //System.out.println(iterator.next());
-		    //}
+		    Boolean i = true;
+		    for (Object o : a)
+		    {
+			   if(i) {
+			      JSONObject gitCommitData = (JSONObject) o;
+	
+			      /*
+			      String name = (String) person.get("sha");
+			      System.out.println(name);
+	
+			      String city = (String) person.get("url");
+			      System.out.println(city);
+	
+			      String job = (String) person.get("comments_url");
+			      System.out.println(job);
+			      */
+			      
+			      JSONObject msgData = (JSONObject) gitCommitData.get("commit");
+			      name1 = (String) msgData.get("message");
+			      System.out.println(name1);
+			      i = false;
+		       }
+		    }
+		    
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

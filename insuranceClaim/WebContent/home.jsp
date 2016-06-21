@@ -5,7 +5,6 @@ if(name == null)  {
 	response.sendRedirect("insuranceClaim.jsp");
 }
 %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -80,8 +79,26 @@ if(name == null)  {
                     <span class="contenbold">NRIC :</span>
                     <span class="contentfont">363636</span></p>
                 </div>
-            </div> 
+            </div>
         </div>  
+        
+        
+		<%
+			if(request.getParameter("data").equals("added")) {
+		%>
+				<div id="PatientBanner">
+						<div style="float: left; padding-top: 30px; margin-left: 100px;">
+							Loss Description:
+						</div>
+						<div style="float: left; padding-top: 15px;">
+							<textarea rows="3" cols="25"></textarea>
+						</div>
+        		</div>          
+		<%
+			}
+		%>
+		        
+
        <!-- #Patient Banner-->
 	   <!-- #Content Area-->
      	<div id="contentbg">

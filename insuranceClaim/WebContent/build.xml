@@ -20,6 +20,7 @@
 		<fileset dir="lib">
 			<include name="*.jar" />
 		</fileset>
+		<pathelement location="WebContent/lib/json-simple-1.1.1.jar"/>
 	</path>
 
 
@@ -28,9 +29,6 @@
 		<!-- <echo message="inside" /> -->
 		<javac srcdir="../src" destdir="${classes-directory}"
 			classpath="lib/javax.servlet-3.0.0.v201112011016.jar">
-		</javac>
-		<javac srcdir="../src" destdir="${classes-directory}"
-			classpath="lib/json-simple-1.1.1.jar">
 		</javac>
 	</target>
 

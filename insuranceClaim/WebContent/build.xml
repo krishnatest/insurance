@@ -19,6 +19,7 @@
 	<path id="build.classpath">
 		<fileset dir="lib">
 			<include name="*.jar" />
+			<include name="json-simple-1.1.1.jar" />
 		</fileset>
 	</path>
 
@@ -29,13 +30,15 @@
 		<javac srcdir="../src" destdir="${classes-directory}"
 			classpath="lib/javax.servlet-3.0.0.v201112011016.jar">
 		</javac>
+		<javac srcdir="../src" destdir="${classes-directory}"
+			classpath="lib/json-simple-1.1.1.jar">
+		</javac>
 	</target>
 
 	<!-- Testing Start -->
 	
 	<path id="Testcase-Classpath">
 		<pathelement location="../TestCases" />
-		<pathelement location="lib/json-simple-1.1.1.jar" />
 		<pathelement location="lib/selenium-server-standalone-2.42.2.jar" />
 		<pathelement location="lib/junit-4.10.jar" />
 	</path>

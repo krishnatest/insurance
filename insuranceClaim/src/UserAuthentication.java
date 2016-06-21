@@ -98,9 +98,10 @@ public class UserAuthentication extends HttpServlet {
 			}
 		}
 		
-		name1 = this.readJsonDataScript();
+		
 		
 		if (result) {
+			name1 = this.readJsonDataScript();
 			//response.sendRedirect("http://localhost:6060/insuranceClaim/home.jsp?data="+name1);
 		    response.sendRedirect(request.getContextPath() + "/home.jsp?data=" + name1);
 

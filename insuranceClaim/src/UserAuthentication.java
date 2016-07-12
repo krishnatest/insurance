@@ -101,10 +101,10 @@ public class UserAuthentication extends HttpServlet {
 		
 		
 		if (result) {
-			name1 = this.readJsonDataScript();
+			//name1 = this.readJsonDataScript();
 			//response.sendRedirect("http://localhost:6060/insuranceClaim/home.jsp?data="+name1);
-		    response.sendRedirect(request.getContextPath() + "/home.jsp?data=" + name1);
-
+		    //response.sendRedirect(request.getContextPath() + "/home.jsp?data=" + name1);
+			response.sendRedirect(request.getContextPath() + "/home.jsp");
 		} else {
 			request.setAttribute("errorMessage", error);
 			request.getRequestDispatcher("/insuranceClaim.jsp").forward(request, response);
@@ -114,41 +114,19 @@ public class UserAuthentication extends HttpServlet {
 
 	
 	/**
-	 * 
+	 * 		Comment by Krishna
+	 * 		This Part used for Data Transfer
 	 */
+	/*
 	public String readJsonDataScript() throws IOException {
-		// TODO Auto-generated method stub
-		// Json data read
-		
 		JSONParser parser = new JSONParser();
 		try {
-			/*
-		    Object obj = parser.parse(new FileReader("D:\\ExternalJAR\\kimJson.txt"));
-		    //JSONObject jsonObject = (JSONObject) obj;
-		    //JSONArray jsonarray = (JSONArray) obj;
-			*/
-			
 		    JSONArray a = (JSONArray) parser.parse(new FileReader("/var/tmp/kimJson.txt"));
-		    //	Linux path /var/tmp/kimJson.txt
-		    //	Windows path D:\\ExternalJAR\\kimJson.txt
-		    
 		    Boolean i = true;
 		    for (Object o : a)
 		    {
 			   if(i) {
 			      JSONObject gitCommitData = (JSONObject) o;
-	
-			      /*
-			      String name = (String) person.get("sha");
-			      System.out.println(name);
-	
-			      String city = (String) person.get("url");
-			      System.out.println(city);
-	
-			      String job = (String) person.get("comments_url");
-			      System.out.println(job);
-			      */
-			      
 			      JSONObject msgData = (JSONObject) gitCommitData.get("commit");
 			      name1 = (String) msgData.get("message");
 			      System.out.println(name1);
@@ -161,6 +139,7 @@ public class UserAuthentication extends HttpServlet {
 		}
 		return name1;
 	}
+	*/
 	
 	
 	

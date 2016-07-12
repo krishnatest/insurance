@@ -33,11 +33,9 @@
 								
 								<!-- Captcha Field added .......................... Start Here ---- -->
 								
-								<!-- 
  								<span class="username"> Captcha 2 + 2 =</span> 
 									<input style="width: 85px;" type="text" class="textbox" name="captcha" id="captcha" >
 									<br /> 
-								 -->
 								 
 								<!-- Captcha Field added .......................... End Here ---- -->
 								

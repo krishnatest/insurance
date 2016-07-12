@@ -67,8 +67,8 @@ public class UserAuthentication extends HttpServlet {
 		boolean result = true;
 
 		//AppWorks Logical Error Introduce
-		if (userName == "") {
-		//if (userName.equals("")) {
+		//if (userName == "") {
+		if (userName.equals("")) {
 			error += "Please enter User Name.<br/>";
 			result = false;
 		}  

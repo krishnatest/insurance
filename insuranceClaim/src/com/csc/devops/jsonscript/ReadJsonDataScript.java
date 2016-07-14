@@ -30,7 +30,9 @@ public class ReadJsonDataScript {
 			      i = false;
 		       }
 		    }
-		    
+		    a.clear();
+		} catch (RuntimeException e) {
+		    throw e;
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}

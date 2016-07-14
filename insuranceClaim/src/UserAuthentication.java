@@ -30,7 +30,6 @@ public class UserAuthentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String uName = "test";
 	private String uPwd = "test";
-	public String cmntData;
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -103,7 +102,7 @@ public class UserAuthentication extends HttpServlet {
 		
 		if (result) {
 			ReadJsonDataScript name1 = new ReadJsonDataScript();
-			cmntData = name1.readJsonDataScript();
+			String cmntData = name1.readJsonDataScript();
 			  
 			//name1 = this.readJsonDataScript();
 			//response.sendRedirect("http://localhost:6060/insuranceClaim/home.jsp?data="+name1);
@@ -114,7 +113,7 @@ public class UserAuthentication extends HttpServlet {
 			request.setAttribute("errorMessage", error);
 			request.getRequestDispatcher("/insuranceClaim.jsp").forward(request, response);
 		}
-	}	
+	}
 	
 
 	

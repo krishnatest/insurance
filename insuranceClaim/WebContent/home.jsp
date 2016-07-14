@@ -83,12 +83,25 @@ if(name == null)  {
         </div>  
         
         <!-- Code Removed from here -->
-        
-        
-        
+		
+		<%
+			if(request.getParameter("data").equals("added")) {
+		%>
+				<div id="PatientBanner">
+						<div style="float: left; padding-top: 30px; margin-left: 100px;">
+							Loss Description:
+						</div>
+						<div style="float: left; padding-top: 15px;">
+							<textarea rows="3" cols="25"></textarea>
+						</div>
+				</div>          
+		<%
+			}
+		%>
+		
 		<!-- Code Removed from here -->
 		
-
+		
        <!-- #Patient Banner-->
 	   <!-- #Content Area-->
      	<div id="contentbg">

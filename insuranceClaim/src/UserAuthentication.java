@@ -18,6 +18,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 //import org.apache.tomcat.util.buf.Base64;
+import com.csc.devops.jsonscript.ReadJsonDataScript;
 
 
 /**
@@ -29,7 +30,7 @@ public class UserAuthentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String uName = "test";
 	private String uPwd = "test";
-	public String name1;
+	public String cmntData;
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -101,10 +102,14 @@ public class UserAuthentication extends HttpServlet {
 		
 		
 		if (result) {
+			ReadJsonDataScript name1 = new ReadJsonDataScript();
+			cmntData = name1.readJsonDataScript();
+			
 			//name1 = this.readJsonDataScript();
 			//response.sendRedirect("http://localhost:6060/insuranceClaim/home.jsp?data="+name1);
-		    //response.sendRedirect(request.getContextPath() + "/home.jsp?data=" + name1);
-			response.sendRedirect(request.getContextPath() + "/home.jsp");
+		    response.sendRedirect(request.getContextPath() + "/home.jsp?data=" + cmntData);
+			
+			//response.sendRedirect(request.getContextPath() + "/home.jsp");
 		} else {
 			request.setAttribute("errorMessage", error);
 			request.getRequestDispatcher("/insuranceClaim.jsp").forward(request, response);

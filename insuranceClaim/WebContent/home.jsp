@@ -83,7 +83,6 @@ if(name == null)  {
         </div>  
         
         <!-- Code Removed from here -->
-		
 		<%
 			if(request.getParameter("data").equals("added")) {
 		%>
